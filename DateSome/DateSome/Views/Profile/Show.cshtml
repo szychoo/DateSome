@@ -1,0 +1,129 @@
+﻿@model DateSome.Models.UserProfile
+
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>@Html.DisplayFor(model => model.Nickname)</h2>
+
+<div class="row">
+    <div class="col-lg-4">
+        @{
+            var base64 = Convert.ToBase64String(Model.Picture);
+            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+        }
+
+        <img height="320" width="240" src="@imgSrc" />
+
+    </div>
+    <div class="col-lg-8">
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.City.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.City.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Age)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Age)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Hobbies)
+            </dt>
+
+            @foreach (var hobby in Model.Hobbies)
+            {
+                <dd>
+                    @hobby.Name
+                </dd>
+            }
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PartnerDescription)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PartnerDescription)
+            </dd>
+
+
+
+        </dl>
+
+    </div>
+</div>
+@*<div>
+    
+   
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.City.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.City.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Age)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Age)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Hobbies)
+            </dt>
+
+            @foreach (var hobby in Model.Hobbies)
+            {
+                <dd>
+                    @hobby.Name
+                </dd>
+            }
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PartnerDescription)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PartnerDescription)
+            </dd>
+
+
+
+        </dl>
+
+    </div>
+</div>*@
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
