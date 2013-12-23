@@ -57,7 +57,101 @@ namespace DateSome.Migrations
                 Picture =File.ReadAllBytes("C:\\Donald_Duck.gif")
             };
 
-            context.UserProfiles.AddOrUpdate(up => up.Nickname, new[] { userProfile1 });
+            UserProfile userProfile2 = new UserProfile()
+            {
+                Nickname = "Daisy",
+                Age = 20,
+                City = city1,
+                Description = "Jestem Daisy",
+                Hobbies = new List<Hobby>() { hobby2 },
+                PartnerDescription = "Szukam swojego Kaczora Donalda..."
+            };
+
+            context.UserProfiles.AddOrUpdate(up => up.Nickname, new[] { userProfile1, userProfile2 });
+
+
+            Message message1 = new Message()
+            {
+                Sender = userProfile1,
+                Receiver = userProfile2,
+                Title = "Message 1 Title",
+                Text = "Message 1 text",
+                Read = true,
+                Replied = false
+            };
+
+            Message message2 = new Message()
+            {
+                Sender = userProfile1,
+                Receiver = userProfile2,
+                Title = "Message 2 Title",
+                Text = "Message 2 text",
+                Read = true,
+                Replied = false
+            };
+
+            Message message3 = new Message()
+            {
+                Sender = userProfile1,
+                Receiver = userProfile2,
+                Title = "Message 3 Title",
+                Text = "Message 3 text",
+                Read = true,
+                Replied = false
+            };
+
+            Message message4 = new Message()
+            {
+                Sender = userProfile1,
+                Receiver = userProfile2,
+                Title = "Message 4 Title",
+                Text = "Message 4 text",
+                Read = true,
+                Replied = false
+            };
+
+            Message message5 = new Message()
+            {
+                Sender = userProfile2,
+                Receiver = userProfile1,
+                Title = "Message 5 Title",
+                Text = "Message 5 text",
+                Read = true,
+                Replied = false
+            };
+
+            Message message6 = new Message()
+            {
+                Sender = userProfile2,
+                Receiver = userProfile1,
+                Title = "Message 6 Title",
+                Text = "Message 6 text",
+                Read = true,
+                Replied = false
+            };
+
+            Message message7 = new Message()
+            {
+                Sender = userProfile2,
+                Receiver = userProfile1,
+                Title = "Message 7 Title",
+                Text = "Message 7 text",
+                Read = true,
+                Replied = false
+            };
+
+            Message message8 = new Message()
+            {
+                Sender = userProfile2,
+                Receiver = userProfile1,
+                Title = "Message 8 Title",
+                Text = "Message 8 text",
+                Read = true,
+                Replied = false
+            };
+
+            context.Messages.AddOrUpdate(m=>m.Title, message1,message2,message3,message4,
+                message5,message6,message7,message8);
         }
     }
 }

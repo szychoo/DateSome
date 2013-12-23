@@ -13,7 +13,7 @@ namespace DateSome.DataAccess
         public DateSomeDbContext()
             : base("DefaultConnection")
         {
-            Database.SetInitializer<DateSomeDbContext>(new DateSomeDbInitializer());
+            //Database.SetInitializer<DateSomeDbContext>(new DateSomeDbInitializer());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

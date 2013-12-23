@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -39,7 +40,7 @@ namespace DateSome.Controllers
         //add pagination
         public ActionResult ShowReceivedList(int receiverId)
         {
-            var messages = _db.Messages.Where(m => m.ReceiverId == receiverId);
+            var messages = _db.Messages.Where(m => m.ReceiverId == receiverId).Include(m=>m.Sender).Include(m=>m.Receiver).ToList();
             return View(messages);
         }
 

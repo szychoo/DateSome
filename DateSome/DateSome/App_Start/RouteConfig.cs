@@ -19,11 +19,17 @@ namespace DateSome
             //    defaults: new { controller = "Profile", action = "Show", userProfileId = 1 }
             //);
 
+            //routes.MapRoute(
+            //    name: "Default",
+            //    url: "{controller}/{action}/{senderId}/{receiverId}",
+            //    defaults: new { controller = "Message", action = "Send", senderId = 1, receiverId = 1}
+            //);
+
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{senderId}/{receiverId}",
-                defaults: new { controller = "Message", action = "Send", senderId = 1, receiverId = 1}
-            );
+               name: "Default",
+               url: "{controller}/{action}/{receiverId}",
+               defaults: new { controller = "Message", action = "ShowReceivedList", receiverId = 1 }
+           );
         }
     }
 }
