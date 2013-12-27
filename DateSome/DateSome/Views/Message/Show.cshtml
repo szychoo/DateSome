@@ -1,0 +1,16 @@
+﻿@model DateSome.Models.Message
+
+@{
+    ViewBag.Title = "Show";
+}
+
+<div class="row">
+    <div>
+        <h2>@Model.Title</h2>
+        <div>From: @Model.Sender.Nickname</div>
+        <div>@Model.SendDateTime</div>
+    </div>
+    <div>
+        @Model.Text
+    </div>
+</div>

@@ -9,55 +9,99 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Receiver.Nickname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sender.Nickname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Text)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Read)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Replied)
-        </th>
-        <th></th>
-    </tr>
+<div class="table-striped">
+    <div class="row">
+        <div class="col-lg-3 text-primary">
+            <div>
+                From
+            </div>
+        </div>
+        <div class="col-lg-3 text-primary">
+            Subject
+        </div>
+        <div class="col-lg-3 text-primary">
+            Date
+        </div>
+    </div>
+    <br />
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-lg-3">
+                <div>
+                    @Html.ActionLink(item.Sender.Nickname, "Show", "Profile",new {userProfileId=item.SenderId},null)
+                </div>
+                <div>
+                    Age: @item.Sender.Age
+                </div>
+                <div>
+                    @item.Sender.City.Name
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div>
+                    @Html.ActionLink(item.Title,"Show",new {messageId=item.Id})
+                </div>
+            </div>
+            <div class="col-lg-3">
+                @item.SendDateTime
+            </div>
+        </div>
+        <br />
+    }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Receiver.Nickname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sender.Nickname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Text)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Read)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Replied)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+</div>
 
-</table>
+
+@*<div class="row">
+        <tr>
+            <th>
+                From
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sender.Nickname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Read)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Replied)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Receiver.Nickname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sender.Nickname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Read)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Replied)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+        </tr>
+    }
+
+    </div>*@

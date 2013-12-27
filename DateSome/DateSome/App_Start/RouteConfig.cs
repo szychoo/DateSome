@@ -22,7 +22,7 @@ namespace DateSome
             //routes.MapRoute(
             //    name: "Default",
             //    url: "{controller}/{action}/{senderId}/{receiverId}",
-            //    defaults: new { controller = "Message", action = "Send", senderId = 1, receiverId = 1}
+            //    defaults: new { controller = "Message", action = "Send", senderId = 1, receiverId = 1 }
             //);
 
             routes.MapRoute(

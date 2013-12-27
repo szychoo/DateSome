@@ -176,6 +176,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Models\Mapping\MessageMap.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="ViewModels\MessageViewModel.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
@@ -253,6 +254,7 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Message\ShowReceivedList.cshtml" />
+    <Content Include="Views\Message\Show.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

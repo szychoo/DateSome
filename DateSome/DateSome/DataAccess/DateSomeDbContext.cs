@@ -1,10 +1,6 @@
 ﻿using DateSome.Models;
 using DateSome.Models.Mapping;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Web;
 
 namespace DateSome.DataAccess
 {
@@ -20,6 +16,7 @@ namespace DateSome.DataAccess
         {
             //modelBuilder.HasDefaultSchema("BusinessLogic");
             modelBuilder.Configurations.Add(new UserProfileMap());
+            modelBuilder.Configurations.Add(new MessageMap());
             base.OnModelCreating(modelBuilder);
         }
 

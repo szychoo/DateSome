@@ -53,7 +53,8 @@ namespace DateSome.Controllers
 
         public ActionResult Show(int messageId)
         {
-            return View();
+            var message =_db.Messages.Where(m => m.Id == messageId).Include(m => m.Sender).Single();
+            return View(message);
         }
 
         protected override void Dispose(bool disposing)

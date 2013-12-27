@@ -77,17 +77,18 @@ namespace DateSome.Migrations
                 Title = "Message 1 Title",
                 Text = "Message 1 text",
                 Read = true,
-                Replied = false
+                SendDateTime = DateTime.Now
             };
 
             Message message2 = new Message()
             {
-                Sender = userProfile1,
-                Receiver = userProfile2,
+                Sender = userProfile2,
+                Receiver = userProfile1,
                 Title = "Message 2 Title",
                 Text = "Message 2 text",
                 Read = true,
-                Replied = false
+                SendDateTime = DateTime.Now,
+                ReplyTo = message1
             };
 
             Message message3 = new Message()
@@ -97,27 +98,30 @@ namespace DateSome.Migrations
                 Title = "Message 3 Title",
                 Text = "Message 3 text",
                 Read = true,
-                Replied = false
+                SendDateTime = DateTime.Now,
+                ReplyTo = message2
             };
 
             Message message4 = new Message()
             {
-                Sender = userProfile1,
-                Receiver = userProfile2,
+                Sender = userProfile2,
+                Receiver = userProfile1,
                 Title = "Message 4 Title",
                 Text = "Message 4 text",
                 Read = true,
-                Replied = false
+                SendDateTime = DateTime.Now,
+                ReplyTo = message3
             };
 
             Message message5 = new Message()
             {
-                Sender = userProfile2,
-                Receiver = userProfile1,
+                Sender = userProfile1,
+                Receiver = userProfile2,
                 Title = "Message 5 Title",
                 Text = "Message 5 text",
                 Read = true,
-                Replied = false
+                SendDateTime = DateTime.Now,
+                ReplyTo = message4
             };
 
             Message message6 = new Message()
@@ -127,17 +131,19 @@ namespace DateSome.Migrations
                 Title = "Message 6 Title",
                 Text = "Message 6 text",
                 Read = true,
-                Replied = false
+                SendDateTime = DateTime.Now,
+                ReplyTo = message5
             };
 
             Message message7 = new Message()
             {
-                Sender = userProfile2,
-                Receiver = userProfile1,
+                Sender = userProfile1,
+                Receiver = userProfile2,
                 Title = "Message 7 Title",
                 Text = "Message 7 text",
                 Read = true,
-                Replied = false
+                SendDateTime = DateTime.Now,
+                ReplyTo = message6
             };
 
             Message message8 = new Message()
@@ -147,11 +153,100 @@ namespace DateSome.Migrations
                 Title = "Message 8 Title",
                 Text = "Message 8 text",
                 Read = true,
-                Replied = false
+                SendDateTime = DateTime.Now,
+                ReplyTo = message7
+            };
+
+            Message message9 = new Message()
+            {
+                Sender = userProfile1,
+                Receiver = userProfile2,
+                Title = "Message 9 Title",
+                Text = "Message 9 text",
+                Read = true,
+                SendDateTime = DateTime.Now,
+                ReplyTo = message8
+            };
+
+            Message message10 = new Message()
+            {
+                Sender = userProfile2,
+                Receiver = userProfile1,
+                Title = "Message 10 Title",
+                Text = "Message 10 text",
+                Read = true,
+                SendDateTime = DateTime.Now,
+                ReplyTo = message9
+            };
+
+            Message message11 = new Message()
+            {
+                Sender = userProfile1,
+                Receiver = userProfile2,
+                Title = "Message 11 Title",
+                Text = "Message 11 text",
+                Read = true,
+                SendDateTime = DateTime.Now,
+                ReplyTo = message10
+            };
+
+            Message message12 = new Message()
+            {
+                Sender = userProfile2,
+                Receiver = userProfile1,
+                Title = "Message 12 Title",
+                Text = "Message 12 text",
+                Read = true,
+                SendDateTime = DateTime.Now,
+                ReplyTo = message11
+            };
+
+            Message message13 = new Message()
+            {
+                Sender = userProfile1,
+                Receiver = userProfile2,
+                Title = "Message 13 Title",
+                Text = "Message 13 text",
+                Read = true,
+                SendDateTime = DateTime.Now,
+                ReplyTo = message12
+            };
+
+            Message message14 = new Message()
+            {
+                Sender = userProfile2,
+                Receiver = userProfile1,
+                Title = "Message 14 Title",
+                Text = "Message 14 text",
+                Read = true,
+                SendDateTime = DateTime.Now,
+                ReplyTo = message13
+            };
+
+            Message message15 = new Message()
+            {
+                Sender = userProfile1,
+                Receiver = userProfile2,
+                Title = "Message 15 Title",
+                Text = "Message 15 text",
+                Read = true,
+                SendDateTime = DateTime.Now,
+                ReplyTo = message14
+            };
+
+            Message message16 = new Message()
+            {
+                Sender = userProfile2,
+                Receiver = userProfile1,
+                Title = "Message 16 Title",
+                Text = "Message 16 text",
+                Read = true,
+                SendDateTime = DateTime.Now,
+                ReplyTo = message15
             };
 
             context.Messages.AddOrUpdate(m=>m.Title, message1,message2,message3,message4,
-                message5,message6,message7,message8);
+                message5,message6,message7,message8, message9, message10, message11, message12, message13, message14, message15, message16);
         }
     }
 }
